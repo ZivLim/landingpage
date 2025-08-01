@@ -1,0 +1,591 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Smooth scrolling for navigation links */
+}
+
+body {
+  font-family: "Inter", sans-serif; /* Changed to Inter as per guidelines */
+  line-height: 1.6;
+  background-color: #f0f2f5; /* Lighter background for contrast */
+  color: #333;
+  /* Subtle animated background for the whole page */
+  background-image: url('https://placehold.co/100x100/E0E0E0/FFFFFF?text=HourGlass'); /* Changed "Pattern" to "MyBackground" */
+  background-repeat: repeat;
+  background-size: 200px 200px; /* Adjust size of the pattern */
+  animation: backgroundMove 60s linear infinite; /* Slow, continuous movement */
+}
+
+@keyframes backgroundMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* Navigation Bar */
+nav {
+  background: #333; /* Dark background for the nav bar */
+  color: white;
+  padding: 15px 20px;
+  position: sticky; /* Makes the nav bar stick to the top when scrolling */
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top of other content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Max width for content alignment */
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px; /* Space between links */
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #4A90E2; /* Highlight color on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+
+/* Hero Section */
+.hero {
+  position: relative; /* Needed for absolute positioning of overlay */
+  background-color: #4A90E2; /* Fallback color */
+  background-image: url('hourglass.gif'); /* Using the uploaded hourglass.gif */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Parallax effect */
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  overflow: hidden; /* Hide overflow from parallax */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center;
+  justify-content: center;
+  min-height: 500px; /* Ensure hero section has a decent height */
+  margin-bottom: 60px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay for text readability */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5em; /* Larger heading */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px; /* Slightly larger button */
+  background: white;
+  color: #4A90E2;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px; /* More rounded corners */
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero .btn:hover {
+  background: #e0e0e0;
+  color: #337ab7;
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* About Me Section */
+.about-me {
+  padding: 60px 20px; /* Matched to features section */
+  text-align: left; /* Changed to left-align the entire section content */
+  background: #fff; /* Matched to features section */
+  margin-top: 40px; /* Added gap from hero section */
+  margin-bottom: 60px;
+  border-radius: 10px; /* Matched to features section */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Matched to features section */
+}
+
+.about-me h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #8b7264;
+}
+
+.about-me-content {
+  max-width: 800px;
+  margin: 0; /* Removed auto margin to allow content to move left */
+}
+
+.about-me-content p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 25px; /* Increased gap between paragraphs */
+  color: #555;
+}
+
+
+/* Features */
+.features, .services, .pricing, .landing-page-intro { /* Added .pricing to share common section styles */
+  padding: 60px 20px; /* Increased padding */
+  text-align: center;
+  background: #fff;
+  margin-bottom: 60px; /* Space between sections */
+  border-radius: 10px; /* Rounded corners for sections */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.features h2, .services h2, .pricing h2, .landing-page-intro h2 { /* Added .landing-page-intro h2 */
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #8b7264;
+}
+
+.feature-list, .service-list {
+  display: flex;
+  justify-content: center; /* Center items */
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+}
+
+.feature-item, .service-item {
+  flex: 1 1 280px; /* Adjusted flex-basis for better responsiveness and more items */
+  margin: 10px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover, .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-item h3, .service-item h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.feature-item p, .service-item p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Services Section (New Styles) */
+.services {
+  background: #eeeeee; /* Different background for this section */
+}
+
+/* Landing Page Intro Section Styles */
+.landing-page-intro {
+    background: #fdfdfd; /* Slightly different background */
+    text-align: center; /* Center the main heading */
+}
+
+.landing-page-intro .landing-page-main-content {
+    display: flex;
+    justify-content: space-around; /* Distribute space between columns */
+    max-width: 1100px; /* Adjust as needed for overall width of the two columns */
+    margin: 0 auto; /* Center the main content block */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    align-items: flex-start; /* Align items to the top */
+    padding: 0 20px; /* Add some horizontal padding for content */
+}
+
+.landing-page-intro .landing-page-left-column {
+    flex: 1; /* Take available space */
+    min-width: 300px; /* Minimum width for the column */
+    max-width: 48%; /* Adjust width for two columns */
+    text-align: left; /* Align text content to the left */
+    padding-right: 20px; /* Gap between columns */
+}
+
+.landing-page-intro .landing-page-left-column p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify; /* Justify text content */
+}
+
+.landing-page-intro .landing-page-right-column {
+    flex: 1; /* Take available space */
+    min-width: 300px; /* Minimum width for the column */
+    max-width: 48%; /* Adjust width for two columns */
+    padding-left: 20px; /* Gap between columns */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-page-intro .landing-page-right-column h3:first-of-type {
+    font-size: 1.6em;
+    color: #4A90E2;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left; /* Ensure this specific h3 is left-aligned */
+    width: 100%; /* Take full width to allow text-align to work */
+}
+
+.landing-page-intro .landing-page-right-column ul:first-of-type {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    width: 100%; /* Take full width to allow text-align to work */
+}
+
+.landing-page-intro .landing-page-right-column ul:first-of-type li {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start; /* Align icon to the top of the text */
+    gap: 8px; /* Space between icon and text */
+    text-align: justify; /* Justify the text within the list item */
+}
+
+.landing-page-intro .landing-page-right-column ul:first-of-type li svg {
+    color: #28a745; /* Green color for checkmark */
+    font-weight: bold;
+    min-width: 20px; /* Ensure icon doesn't shrink */
+    flex-shrink: 0; /* Prevent checkmark from shrinking */
+    margin-top: 0.2em; /* Adjust vertical alignment */
+}
+
+/* New styles for the centered column within landing-page-right-column */
+.landing-page-intro .landing-page-center-column {
+    width: fit-content; /* Make the column only as wide as its content */
+    margin: 0 auto; /* Center the column itself horizontally */
+    text-align: center; /* Center the text within this column */
+    padding-top: 30px; /* Add some space above this section */
+    max-width:100%;
+}
+
+.landing-page-intro .landing-page-center-column h3 {
+    font-size: 1.6em;
+    color: #4A90E2;
+    margin-bottom: 15px;
+    text-align: center; /* Ensure this heading is centered */
+}
+
+.landing-page-intro .landing-page-center-column ul {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    /* Removed width: 100%; as width: fit-content is on parent */
+}
+
+.landing-page-intro .landing-page-center-column ul li {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start; /* Align icon to the top of the text */
+    gap: 8px; /* Space between icon and text */
+    text-align: left; /* Keep text left-aligned within the list item */
+}
+
+.landing-page-intro .landing-page-center-column ul li svg {
+    color: #28a745; /* Green color for checkmark */
+    font-weight: bold;
+    min-width: 20px; /* Ensure icon doesn't shrink */
+    flex-shrink: 0; /* Prevent checkmark from shrinking */
+    margin-top: 0.2em; /* Adjust vertical alignment */
+}
+
+
+/* Pricing Section Styles */
+.pricing {
+  background: #fdfdfd; /* Slightly different background for pricing */
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between pricing cards */
+  margin-top: 30px;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  flex: 1 1 300px; /* Flexible width for cards */
+  max-width: 380px; /* Max width to prevent cards from becoming too wide */
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  align-items: center; /* Center content horizontally within the card */
+  text-align: center; /* Center text within the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px); /* More pronounced lift on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.featured {
+  border: 3px solid #4A90E2; /* Highlight for featured plan */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card h3 {
+  font-size: 2.2em;
+  color: #4A90E2;
+  margin-bottom: 15px;
+}
+
+.pricing-card .price {
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+  white-space: nowrap; /* Keep price on one line */
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left; /* Align list items to the left */
+  width: 100%; /* Ensure list takes full width for alignment */
+}
+
+.pricing-card ul li {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start; /* Align icon to the top of the text */
+  gap: 8px; /* Space between icon and text */
+}
+
+.pricing-card ul li svg {
+  color: #28a745; /* Checkmark icon color */
+  min-width: 20px; /* Ensure icon doesn't shrink */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-top: 0.2em; /* Adjust vertical alignment of the tick */
+}
+
+.pricing-card .pricing-btn {
+  margin-top: auto; /* Push button to the bottom */
+  width: 80%; /* Make button wider */
+  padding: 12px 20px;
+  font-size: 1.1em;
+}
+
+
+/* Contact Section */
+.contact {
+  background: #b9aaa2; /* Blue background for contact */
+  color: white;
+  padding: 60px 20px;
+  text-align: center; /* Ensure content is centered */
+  display: flex; /* Use flexbox to center content */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  gap: 20px; /* Gap between the heading and buttons, and between buttons */
+}
+
+.contact h2 {
+  color: white; /* White heading for contact section */
+  margin-bottom: 0; /* Removed margin-bottom here as gap handles spacing */
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center; /* Center buttons */
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px; /* Space from the heading */
+}
+
+/* Common Contact Button Styling */
+.contact-button {
+  display: inline-flex; /* Use flexbox for icon and text alignment */
+  align-items: center; /* Vertically align icon and text */
+  gap: 10px; /* Space between icon and text */
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px; /* Larger padding for a prominent button */
+  border-radius: 50px; /* Pill shape */
+  font-size: 1.3em; /* Larger text */
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.contact-button svg {
+  width: 30px; /* Size of the SVG icon */
+  height: 30px;
+  vertical-align: middle; /* Align icon with text */
+}
+
+/* WhatsApp Button Specific Styling */
+.whatsapp-button {
+  background: #25D366; /* WhatsApp green */
+}
+
+.whatsapp-button:hover {
+  background: #1DA851; /* Darker green on hover */
+}
+
+/* Email Button Specific Styling */
+.email-button {
+  background: #927667; /* Google Red (common for email icons) */
+}
+
+.email-button:hover {
+  background: #745e52; /* Darker red on hover */
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a; /* Slightly darker background */
+  color: #ccc; /* Lighter text for better contrast */
+  padding: 25px;
+  font-size: 0.95em; /* Slightly larger font */
+  border-top: 5px solid #4A90E2;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Ensure it spans full width */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .feature-list, .service-list, .pricing-cards { /* Added pricing-cards */
+    flex-direction: column; /* Stack items on small screens */
+    align-items: center;
+  }
+
+  .feature-item, .service-item, .pricing-card { /* Added pricing-card */
+    flex: 1 1 90%; /* Take more width on small screens */
+    max-width: 400px; /* Max width for readability */
+  }
+
+  .features h2, .services h2, .contact h2, .about-me h2, .pricing h2, .landing-page-intro h2 { /* Added landing-page-intro h2 */
+    font-size: 2em;
+  }
+
+  /* Navigation responsive adjustments */
+  .nav-links {
+    flex-direction: column; /* Stack links vertically on small screens */
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .contact-buttons {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+  }
+
+  .landing-page-intro .landing-page-left-column,
+  .landing-page-intro .landing-page-right-column {
+      max-width: 100%; /* Full width on small screens */
+      padding: 0; /* Remove padding between columns */
+      text-align: left; /* Both columns left-aligned on small screens */
+  }
+
+  .landing-page-intro .landing-page-right-column ul li {
+      justify-content: flex-start; /* Align list items to left on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 0.9em;
+  }
+
+  .hero .btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .features, .services, .contact, .about-me, .pricing, .landing-page-intro { /* Added pricing */
+    padding: 40px 15px;
+  }
+
+  .contact-button { /* Applied to both whatsapp and email */
+    padding: 12px 20px;
+    font-size: 1.1em;
+  }
+
+  .contact-button svg {
+    width: 25px;
+    height: 25px;
+  }
+}
