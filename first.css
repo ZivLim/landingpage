@@ -516,6 +516,11 @@ footer {
     font-size: 1em;
   }
 
+  .hero .btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
   .feature-list, .service-list, .pricing-cards { /* Added pricing-cards */
     flex-direction: column; /* Stack items on small screens */
     align-items: center;
@@ -554,6 +559,29 @@ footer {
 
   .landing-page-intro .landing-page-right-column ul li {
       justify-content: flex-start; /* Align list items to left on small screens */
+  }
+
+    /* Additional fixes for the landing-page-intro section on mobile */
+  .landing-page-intro .landing-page-right-column ul,
+  .landing-page-intro .landing-page-right-column ul li {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .landing-page-intro .landing-page-center-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .landing-page-intro .landing-page-center-column ul {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .landing-page-intro .landing-page-center-column ul li {
+    text-align: left;
+    justify-content: flex-start;
   }
 }
 
