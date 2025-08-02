@@ -521,68 +521,64 @@ footer {
     font-size: 0.9em;
   }
 
-  .feature-list, .service-list, .pricing-cards { /* Added pricing-cards */
-    flex-direction: column; /* Stack items on small screens */
+  .feature-list, .service-list, .pricing-cards {
+    flex-direction: column;
     align-items: center;
   }
 
-  .feature-item, .service-item, .pricing-card { /* Added pricing-card */
-    flex: 1 1 90%; /* Take more width on small screens */
-    max-width: 400px; /* Max width for readability */
+  .feature-item, .service-item, .pricing-card {
+    flex: 1 1 90%;
+    max-width: 400px;
   }
 
-  .features h2, .services h2, .contact h2, .about-me h2, .pricing h2, .landing-page-intro h2 { /* Added landing-page-intro h2 */
+  .features h2, .services h2, .contact h2, .about-me h2, .pricing h2, .landing-page-intro h2 {
     font-size: 2em;
   }
 
   /* Navigation responsive adjustments */
-  .nav-links {
-    flex-direction: column; /* Stack links vertically on small screens */
-    gap: 10px;
-    margin-top: 15px;
-  }
-
   .nav-container {
     flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
   }
 
   .contact-buttons {
-    flex-direction: column; /* Stack buttons vertically on small screens */
+    flex-direction: column;
   }
 
+  /* Landing Page Intro responsive adjustments */
   .landing-page-intro .landing-page-left-column,
   .landing-page-intro .landing-page-right-column {
-      max-width: 100%; /* Full width on small screens */
-      padding: 0; /* Remove padding between columns */
-      text-align: left; /* Both columns left-aligned on small screens */
+      max-width: 100%;
+      padding: 0;
+      text-align: left;
   }
 
   .landing-page-intro .landing-page-right-column ul li {
-      justify-content: flex-start; /* Align list items to left on small screens */
+      justify-content: flex-start;
   }
 
-    /* Additional fixes for the landing-page-intro section on mobile */
-  .landing-page-intro .landing-page-right-column ul,
-  .landing-page-intro .landing-page-right-column ul li {
-    width: 100%;
-    box-sizing: border-box;
+  .landing-page-intro .landing-page-right-column {
+    align-items: flex-start;
   }
 
   .landing-page-intro .landing-page-center-column {
     width: 100%;
-    padding: 0;
-  }
-
-  .landing-page-intro .landing-page-center-column ul {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .landing-page-intro .landing-page-center-column ul li {
     text-align: left;
-    justify-content: flex-start;
+    padding-top: 30px;
   }
+
+  .landing-page-intro .landing-page-center-column h3 {
+    text-align: left;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -603,11 +599,11 @@ footer {
     font-size: 0.9em;
   }
 
-  .features, .services, .contact, .about-me, .pricing, .landing-page-intro { /* Added pricing */
+  .features, .services, .contact, .about-me, .pricing, .landing-page-intro {
     padding: 40px 15px;
   }
 
-  .contact-button { /* Applied to both whatsapp and email */
+  .contact-button {
     padding: 12px 20px;
     font-size: 1.1em;
   }
@@ -617,3 +613,4 @@ footer {
     height: 25px;
   }
 }
+
